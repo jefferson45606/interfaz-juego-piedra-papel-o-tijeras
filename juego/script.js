@@ -57,36 +57,36 @@ class Juego {
       this.puntajeMaquina++;
     }
 
-    document.getElementById("puntajeUsuario").innerText = this.puntajeUsuario;
-    document.getElementById("puntajeMaquina").innerText = this.puntajeMaquina;
+    document.getElementById("puntaje-usuario").innerText = this.puntajeUsuario;
+    document.getElementById("puntaje-maquina").innerText = this.puntajeMaquina;
     document.getElementById("resultado").innerText = `La máquina eligió ${eleccionMaquina}. ${resultado}`;
   }
 
   reiniciarPuntaje() {
     this.puntajeUsuario = 0;
     this.puntajeMaquina = 0;
-    document.getElementById("puntajeUsuario").innerText = 0;
-    document.getElementById("puntajeMaquina").innerText = 0;
+    document.getElementById("puntaje-usuario").innerText = 0;
+    document.getElementById("puntaje-maquina").innerText = 0;
   }
 }
 
 const juego = new Juego();
 
-
-document.getElementById("btnIniciarSesion").addEventListener("click", () => {
-  document.getElementById("formularioIniciarSesion").classList.add("activo");
-  document.getElementById("formularioRegistrar").classList.remove("activo");
+// Alternar entre formularios
+document.getElementById("btn-iniciar-sesion").addEventListener("click", () => {
+  document.getElementById("formulario-iniciar-sesion").classList.add("activo");
+  document.getElementById("formulario-registrar").classList.remove("activo");
 });
 
-document.getElementById("btnRegistrarUsuario").addEventListener("click", () => {
-  document.getElementById("formularioRegistrar").classList.add("activo");
-  document.getElementById("formularioIniciarSesion").classList.remove("activo");
+document.getElementById("btn-registrar-usuario").addEventListener("click", () => {
+  document.getElementById("formulario-registrar").classList.add("activo");
+  document.getElementById("formulario-iniciar-sesion").classList.remove("activo");
 });
 
-
-document.getElementById("btnEnviarRegistro").addEventListener("click", () => {
-  const nombre = document.getElementById("usuarioRegistrar").value;
-  const contraseña = document.getElementById("contraseñaRegistrar").value;
+// Registro de usuario
+document.getElementById("btn-enviar-registro").addEventListener("click", () => {
+  const nombre = document.getElementById("usuario-registrar").value;
+  const contraseña = document.getElementById("contraseña-registrar").value;
   if (nombre && contraseña) {
     juego.registrarUsuario(nombre, contraseña);
   } else {
@@ -94,33 +94,33 @@ document.getElementById("btnEnviarRegistro").addEventListener("click", () => {
   }
 });
 
-
-document.getElementById("btnEnviarInicio").addEventListener("click", () => {
-  const nombre = document.getElementById("usuarioIniciar").value;
-  const contraseña = document.getElementById("contraseñaIniciar").value;
+// Inicio de sesión
+document.getElementById("btn-enviar-inicio").addEventListener("click", () => {
+  const nombre = document.getElementById("usuario-iniciar").value;
+  const contraseña = document.getElementById("contraseña-iniciar").value;
   if (juego.iniciarSesion(nombre, contraseña)) {
-    document.getElementById("contenedorUsuario").classList.add("oculto");
-    document.getElementById("contenedorJuego").classList.remove("oculto");
+    document.getElementById("contenedor-usuario").classList.add("oculto");
+    document.getElementById("contenedor-juego").classList.remove("oculto");
     alert(`¡Bienvenido, ${nombre}!`);
   }
 });
 
-
+// Elección del juego
 document.querySelectorAll(".opcion").forEach((boton) => {
   boton.addEventListener("click", () => {
-    const eleccion = boton.getAttribute("dataEleccion");
+    const eleccion = boton.getAttribute("data-eleccion");
     juego.jugar(eleccion);
   });
 });
 
-
-document.getElementById("reiniciarPuntaje").addEventListener("click", () => {
+// Reiniciar puntaje
+document.getElementById("reiniciar-puntaje").addEventListener("click", () => {
   juego.reiniciarPuntaje();
 });
 
-
-document.getElementById("cerrarSesion").addEventListener("click", () => {
+// Cerrar sesión
+document.getElementById("cerrar-sesion").addEventListener("click", () => {
   juego.usuarioActual = null;
-  document.getElementById("contenedorJuego").classList.add("oculto");
-  document.getElementById("contenedorUsuario").classList.remove("oculto");
+  document.getElementById("contenedor-juego").classList.add("oculto");
+  document.getElementById("contenedor-usuario").classList.remove("oculto");
 });

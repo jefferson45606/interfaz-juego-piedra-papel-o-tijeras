@@ -1,3 +1,4 @@
+/* Estilos Generales */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -10,7 +11,7 @@ body {
   height: 100vh;
 }
 
-#contenedorPrincipal {
+#contenedor-principal {
   width: 100%;
   max-width: 400px;
   background: #ffffff10;
@@ -38,9 +39,8 @@ button:hover {
   background: #6a11cb;
 }
 
-
-
-#alternarFormularios button {
+/* Formularios */
+#alternar-formularios button {
   margin: 0 5px;
 }
 
@@ -61,9 +61,7 @@ input {
   border: none;
 }
 
-
-
-
+/* Juego */
 #opciones {
   display: flex;
   justify-content: space-around;
