@@ -72,7 +72,7 @@ class Juego {
 
 const juego = new Juego();
 
-// Alternar entre formularios
+
 document.getElementById("btn-iniciar-sesion").addEventListener("click", () => {
   document.getElementById("formulario-iniciar-sesion").classList.add("activo");
   document.getElementById("formulario-registrar").classList.remove("activo");
@@ -83,7 +83,7 @@ document.getElementById("btn-registrar-usuario").addEventListener("click", () =>
   document.getElementById("formulario-iniciar-sesion").classList.remove("activo");
 });
 
-// Registro de usuario
+
 document.getElementById("btn-enviar-registro").addEventListener("click", () => {
   const nombre = document.getElementById("usuario-registrar").value;
   const contraseña = document.getElementById("contraseña-registrar").value;
@@ -94,7 +94,7 @@ document.getElementById("btn-enviar-registro").addEventListener("click", () => {
   }
 });
 
-// Inicio de sesión
+
 document.getElementById("btn-enviar-inicio").addEventListener("click", () => {
   const nombre = document.getElementById("usuario-iniciar").value;
   const contraseña = document.getElementById("contraseña-iniciar").value;
@@ -105,7 +105,7 @@ document.getElementById("btn-enviar-inicio").addEventListener("click", () => {
   }
 });
 
-// Elección del juego
+
 document.querySelectorAll(".opcion").forEach((boton) => {
   boton.addEventListener("click", () => {
     const eleccion = boton.getAttribute("data-eleccion");
@@ -113,12 +113,12 @@ document.querySelectorAll(".opcion").forEach((boton) => {
   });
 });
 
-// Reiniciar puntaje
+
 document.getElementById("reiniciar-puntaje").addEventListener("click", () => {
   juego.reiniciarPuntaje();
 });
 
-// Cerrar sesión
+
 document.getElementById("cerrar-sesion").addEventListener("click", () => {
   juego.usuarioActual = null;
   document.getElementById("contenedor-juego").classList.add("oculto");
