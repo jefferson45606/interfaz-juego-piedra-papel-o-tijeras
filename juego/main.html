@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piedra, Papel o Tijeras</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="icon" href="imagenes/descarga.png" type="image/png">
+</head>
+
+<body>
+  <div id="contenedorPrincipal">
+    <div id="contenedorUsuario">
+      <div id="alternarFormularios">
+        <button id="btnIniciarSesion" class="activo">Iniciar Sesión</button>
+        <button id="btnRegistrarUsuario">Registrar Usuario</button>
+      </div>
+      <form id="formularioIniciarSesion" class="formulario activo">
+        <h2>Iniciar Sesión</h2>
+        <input type="text" id="usuarioIniciar" placeholder="Nombre de Usuario" required>
+        <input type="password" id="contraseñaIniciar" placeholder="Contraseña" required>
+        <button type="button" id="btnEnviarInicio">Entrar</button>
+      </form>
+      <form id="formularioRegistrar" class="formulario">
+        <h2>Registrar Usuario</h2>
+        <input type="text" id="usuarioRegistrar" placeholder="Nombre de Usuario" required>
+        <input type="password" id="contraseñaRegistrar" placeholder="Contraseña" required>
+        <button type="button" id="btnEnviarRegistro">Registrar</button>
+      </form>
+    </div>
+
+    <div id="contenedorJuego" class="oculto">
+      <h2>Piedra, Papel o Tijeras</h2>
+      <div id="puntaje">
+        <span>Usuario: <span id="puntajeUsuario">0</span></span>
+        <span>Máquina: <span id="puntajeMaquina">0</span></span>
+      </div>
+
+      <div id="opciones">
+        <button class="opcion" data-eleccion="piedra">🌑</button>
+        <button class="opcion" data-eleccion="papel">📄</button>
+        <button class="opcion" data-eleccion="tijeras">✂️</button>
+        
+      </div>
+      <p id="resultado">Selecciona una opción para comenzar</p>
+      <button id="reiniciarPuntaje">Reiniciar Puntaje</button>
+      <button id="cerrarSesion">Cerrar Sesión</button>
+    </div>
+  </div>
+  
+  <script src="sript.js"></script>
+</body>
+</html>
